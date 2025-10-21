@@ -1,59 +1,64 @@
-# MongoDB Fundamentals - Week 1
+# MongoDB Data Layer Assignment
 
-## Setup Instructions
+This project demonstrates fundamental and advanced data manipulation techniques in MongoDB using the official Node.js driver. It includes scripts to populate a database with sample data and to execute a variety of queries, aggregations, and indexing operations as required by the PLP Academy Week 1 assignment.
 
-Before you begin this assignment, please make sure you have the following installed:
+## Screenshots
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+### Book Collection
 
-### Node.js Package Setup
+The following screenshot from MongoDB Compass shows the `books` collection populated with sample data within the `plp_bookstore` database.
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+![Book Collection](./Assets/collection-screenshot.png)
+
+### Collection Indexes
+
+This screenshot shows the indexes created on the `books` collection to improve query performance, including the `title_1` index and the `author_1_published_year_-1` compound index.
+
+![Collection Indexes](./Assets/indexes-screenshots.png)
+
+## Prerequisites
+
+Before running the scripts, ensure you have the following installed and running:
+
+1.  **Node.js** (v18 or higher)
+2.  **MongoDB Server** (A local instance running on `mongodb://localhost:27017` is expected by the scripts).
+
+## Setup
+
+1.  Clone the repository to your local machine.
+2.  Navigate to the project directory in your terminal.
+3.  Initialize a new Node.js project, which will create a `package.json` file to manage dependencies:
+
+    ```bash
+    npm init -y
+    ```
+
+4.  Install the MongoDB Node.js driver, which is required to run the scripts:
+
+    ```bash
+    npm install mongodb
+    ```
+
+## How to Run the Scripts
+
+The scripts are designed to be run from the root of the project directory.
+
+### 1. Populate the Database
+
+First, run the `insert_books.js` script to populate the `plp_bookstore` database with sample book data. This script will automatically drop any existing `books` collection to ensure a clean insertion.
 
 ```bash
-# Initialize a package.json file
-npm init -y
-
-# Install the MongoDB Node.js driver
-npm install mongodb
+node insert_books.js
 ```
 
-## Assignment Overview
+You should see a confirmation message indicating that 12 books were successfully inserted.
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+### 2. Execute the Queries
 
-## Submission
+After populating the database, run the `queries.js` script to perform all the required CRUD operations, advanced queries, aggregations, and indexing tasks.
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+```bash
+node queries.js
+```
 
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
-
-## Files Included
-
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
-
-## Requirements
-
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
-
-## Resources
-
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+The script will output the results of each task sequentially to the console.

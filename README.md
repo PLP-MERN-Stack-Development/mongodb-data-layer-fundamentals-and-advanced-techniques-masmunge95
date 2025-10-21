@@ -14,7 +14,7 @@ The following screenshot from MongoDB Compass shows the `books` collection popul
 
 This screenshot shows the indexes created on the `books` collection to improve query performance, including the `title_1` index and the `author_1_published_year_-1` compound index.
 
-![Collection Indexes](./Assets/indexes-screenshots.png)
+![Collection Indexes](./Assets/indexes-screenshot.png)
 
 ## Prerequisites
 
